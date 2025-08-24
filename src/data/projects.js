@@ -16,7 +16,7 @@ export const projects = [
     image: "/EngageAnalytics.jpg",
     technologies: ["React", "Tailwind CSS", "Django", "Vite", "Azure Storage", "PostgresSQL"],
     github: "https://github.com/Learnathon-By-Geeky-Solutions/h3cker",
-    live: "#",
+    live: "https://h3cker.onrender.com/",
     featured: true
   },
   {

@@ -10,6 +10,7 @@ import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 function App() {
   useEffect(() => {
     // Force dark mode always

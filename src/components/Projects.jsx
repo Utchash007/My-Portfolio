@@ -54,6 +54,17 @@ const Projects = () => {
                   >
                     <Github className="w-5 h-5" />
                   </a>
+                  {project.live !== "#" && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 bg-white rounded-full hover:bg-gray-100 transition-colors duration-200"
+                      aria-label="View Live Demo"
+                    >
+                      <ExternalLink className="w-5 h-5" />
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -89,6 +100,17 @@ const Projects = () => {
                     <Github className="w-4 h-4" />
                     <span>Code</span>
                   </a>
+                  {project.live !== "#" && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      <span>Live Demo</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
