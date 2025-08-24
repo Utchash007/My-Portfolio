@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Download, MapPin, Calendar, Mail, Phone } from 'lucide-react';
 import DecryptedText from '../utils/DecryptedText/DecryptedText';
 
-import profileImage from '../assets/profile.jpg';
 const About = () => {
   const personalInfo = [
     { icon: <MapPin className="w-4 h-4" />, label: 'Location', value: 'Dhaka, Bangladesh' },
@@ -53,7 +52,7 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-purple-500 rounded-2xl transform rotate-3"></div>
                 <div className="relative bg-white dark:bg-dark-700 rounded-2xl p-2 transform -rotate-1">
                   <img
-                    src={profileImage}
+                    src="/Profile.jpg"
                     alt="Shariar Hasan"
                     className="w-full h-96 object-cover rounded-xl"
                     onError={(e) => {
