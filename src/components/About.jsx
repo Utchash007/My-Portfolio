@@ -52,7 +52,7 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-purple-500 rounded-2xl transform rotate-3"></div>
                 <div className="relative bg-white dark:bg-dark-700 rounded-2xl p-2 transform -rotate-1">
                   <img
-                    src="/Profile.jpg"
+                    src="/profile.jpg"
                     alt="Shariar Hasan"
                     className="w-full h-96 object-cover rounded-xl"
                     onError={(e) => {
