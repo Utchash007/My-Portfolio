@@ -192,7 +192,7 @@ const aiml=[
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
            Other Tools
           </h2>
-        <div className="mb-8 w-screen -ml-[10%] overflow-hidden">
+        <div className="mb-8 w-[120%] -ml-[10%] overflow-hidden">
            <LogoLoop
             logos={tools}
             speed={100}
