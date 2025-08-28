@@ -93,7 +93,7 @@ const aiml=[
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
            Backend Technologies
           </h2>
-        <div className="mb-8 -mx-4 sm:-mx-8 lg:-mx-64">
+        <div className="mb-8 w-[120%] -ml-[10%] overflow-hidden">
            <LogoLoop
             logos={backend}
             speed={100}
@@ -119,7 +119,7 @@ const aiml=[
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
            Frontend Technologies
           </h2>
-        <div className="mb-8 -mx-4 sm:-mx-8 lg:-mx-64">
+        <div className="mb-8 w-[120%] -ml-[10%] overflow-hidden">
            <LogoLoop
             logos={techLogos}
             speed={100}
@@ -139,7 +139,7 @@ const aiml=[
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
           AI/ML Frameworks
           </h2>
-        <div className="mb-8 -mx-4 sm:-mx-8 lg:-mx-64">
+       <div className="mb-8 w-[120%] -ml-[10%] overflow-hidden">
            <LogoLoop
             logos={aiml}
             speed={100}
@@ -165,7 +165,7 @@ const aiml=[
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
            Database
           </h2>
-        <div className="mb-8 -mx-4 sm:-mx-8 lg:-mx-64">
+       <div className="mb-8 w-[120%] -ml-[10%] overflow-hidden">
            <LogoLoop
             logos={db}
             speed={100}
@@ -192,7 +192,7 @@ const aiml=[
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
            Other Tools
           </h2>
-        <div className="mb-8 -mx-4 sm:-mx-8 lg:-mx-64">
+        <div className="mb-8 w-screen -ml-[10%] overflow-hidden">
            <LogoLoop
             logos={tools}
             speed={100}
