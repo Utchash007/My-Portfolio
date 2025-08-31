@@ -21,9 +21,15 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
-      title: 'Email',
+      title: 'Primary Email',
       value: 'shariarhasan872@gmail.com',
       link: 'mailto:shariarhasan872@gmail.com'
+    },
+    {
+      icon: <Mail className="w-6 h-6" />,
+      title: 'Secondary Email',
+      value: 'utchash2001@gmail.com',
+      link: 'mailto:utchash2001@gmail.com'
     },
     {
       icon: <MapPin className="w-6 h-6" />,
