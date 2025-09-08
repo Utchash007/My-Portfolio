@@ -62,7 +62,7 @@ export const voluntaryExperience = [
   {
     company: "BUP Infotech Club",
     position: "Head of Competitive Programming",
-    duration: "Mar 2024 - Present",
+    duration: "Mar 2024 - Aug 2025",
     description: "Supervise training for juniors in algorithmic problem solving. Organize and host weekly programming contests. Led the club's competitive programming initiatives and mentored students in data structures and algorithms.",
     technologies: ["C++", "C", "Problem Solving", "Algorithms", "Data Structures", "Teaching"]
   }
@@ -72,7 +72,7 @@ export const education = [
   {
     degree: "Bachelor of Science in Information & Communication Engineering",
     institution: "Bangladesh University of Professionals (BUP)",
-    duration: "2021 - Present",
+    duration: "2021 - 2025",
     description: "Recently graduated with a B.Sc. degree in Information and Communication Engineering with CGPA: 3.59. Focus on Software Engineering, Machine Learning, and Communication Systems. Active in competitive programming and technical leadership roles."
   },
   {
