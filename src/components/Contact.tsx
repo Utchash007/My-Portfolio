@@ -1,24 +1,21 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, X } from 'lucide-react';
+import { Mail, MapPin, Send, Github, Linkedin, X } from 'lucide-react';
 
-const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+interface ContactInfo {
+  icon: React.ReactElement;
+  title: string;
+  value: string;
+  link: string | null;
+}
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+interface SocialLink {
+  icon: React.ReactElement;
+  name: string;
+  url: string;
+  color: string;
+}
 
-  const contactInfo = [
+const Contact: React.FC = () => {  const contactInfo: ContactInfo[] = [
     {
       icon: <Mail className="w-6 h-6" />,
       title: 'Primary Email',
@@ -39,7 +36,7 @@ const Contact = () => {
     }
   ];
 
-  const socialLinks = [
+  const socialLinks: SocialLink[] = [
     {
       icon: <Github className="w-5 h-5" />,
       name: 'GitHub',
@@ -100,7 +97,7 @@ const Contact = () => {
 
             {/* Contact Info */}
             <div className="space-y-6">
-              {contactInfo.map((info, index) => (
+              {contactInfo.map((info: ContactInfo, index: number) => (
                 <motion.div
                   key={info.title}
                   initial={{ opacity: 0, y: 10 }}
@@ -141,7 +138,7 @@ const Contact = () => {
                 Follow Me
               </h4>
               <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
+                {socialLinks.map((social: SocialLink, index: number) => (
                   <motion.a
                     key={social.name}
                     href={social.url}
@@ -169,8 +166,8 @@ const Contact = () => {
               viewport={{ once: true }}
             >
               <form
-                onSubmit={(e) => {
-                  setTimeout(() => e.target.reset(), 5);
+                onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
+                  setTimeout(() => (e.target as HTMLFormElement).reset(), 5);
                 }}
                 action="https://formspree.io/f/xovlopeg"
                 method="POST"

@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { ChevronDown, Github, Linkedin, Mail, ArrowRight } from 'lucide-react';
 import LightRays from '../utils/LightRays/LightRays';
-const Hero = () => {
-  const scrollToAbout = () => {
+
+const Hero: React.FC = () => {
+  const scrollToAbout = (): void => {
     const element = document.querySelector('#about');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });

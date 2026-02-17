@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 dark:bg-dark-900 text-white py-8 sm:py-12">
       <div className="container-custom px-4 sm:px-6 lg:px-8">

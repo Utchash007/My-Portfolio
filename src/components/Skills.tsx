@@ -1,19 +1,24 @@
 import { motion } from 'framer-motion';
-import { skills } from '../data/skills';
 import LogoLoop from '../utils/LogoLoop/LogoLoop';
-import { SiReact, SiNextdotjs, SiSupabase,SiShadcnui, SiTailwindcss, 
+import { SiReact, SiSupabase, SiTailwindcss, 
   SiPython, SiMongodb, SiSqlite, SiPythonanywhere, SiPostgresql, SiDjango, 
   SiFastapi, SiFlask, SiStreamlit, SiGraphql, SiMysql,
-SiGit, SiGithub, SiGitkraken, SiDocker,SiLinux, SiPytorch, 
+SiGit, SiGithub, SiGitkraken, SiDocker, SiPytorch, 
 SiJupyter, SiTensorflow, SiOpencv, SiNumpy, SiPandas, SiGooglecolab, 
 SiMediapipe, SiMlflow} from 'react-icons/si';
 import { IoLogoJavascript, IoLogoHtml5,IoLogoCss3 } from "react-icons/io5";
 import { VscVscodeInsiders } from "react-icons/vsc";
 import { GrUbuntu } from "react-icons/gr";
-import { title } from 'framer-motion/client';
-const Skills = () => {
+
+interface TechLogo {
+  node: React.ReactElement;
+  title: string;
+  href: string;
+}
+
+const Skills: React.FC = () => {
   
-const techLogos = [
+const techLogos: TechLogo[] = [
   { node: <IoLogoJavascript />, title: "JavaScript", href: "https://www.javascript.com" },
   { node: <IoLogoHtml5 />, title: "HTML5", href: "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" },
   {node: <IoLogoCss3 />, title: "CSS3", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
@@ -24,7 +29,7 @@ const techLogos = [
 ];
 
 
-const backend=[
+const backend: TechLogo[] = [
   {node: <SiPython />, title: "Python", href: "https://www.python.org"},
   {node: <SiDjango />, title: "Django", href: "https://www.djangoproject.com"},
   {node: <SiFastapi />, title: "FastAPI", href: "https://fastapi.tiangolo.com"},
@@ -33,7 +38,7 @@ const backend=[
   {node: <SiGraphql />, title: "GraphQL", href: "https://graphql.org"},
 ];
 
-const db=[
+const db: TechLogo[] = [
     {node:<SiMysql />, title: "MySQL", href: "https://www.mysql.com"},
     {node:<SiPostgresql />, title: "PostgreSQL", href: "https://www.postgresql.org"},
     {node:<SiMongodb />, title: "MongoDB", href: "https://www.mongodb.com"},
@@ -42,7 +47,7 @@ const db=[
 ];
 
 
-const tools=[
+const tools: TechLogo[] = [
     {node: <SiPythonanywhere />, title: "PythonAnywhere", href: "https://www.pythonanywhere.com"},
     {node: <SiGit />, title: "Git", href: "https://git-scm.com"},
     {node: <SiGithub />, title: "GitHub", href: "https://github.com"},
@@ -52,7 +57,7 @@ const tools=[
     {node: <VscVscodeInsiders />, title: "VS Code Insiders", href: "https://code.visualstudio.com/insiders/"}
 ];
 
-const aiml=[
+const aiml: TechLogo[] = [
       {node: <SiPytorch />, title: "PyTorch", href: "https://pytorch.org"},
       {node: <SiJupyter />, title: "Jupyter", href: "https://jupyter.org"},
       {node: <SiTensorflow />, title: "TensorFlow", href: "https://www.tensorflow.org"},
@@ -94,6 +99,7 @@ const aiml=[
            Backend Technologies
           </h2>
         <div className="mb-8 w-[120%] -ml-[10%] overflow-hidden">
+           {/* @ts-ignore - JSX component with declaration file */}
            <LogoLoop
             logos={backend}
             speed={100}
@@ -120,6 +126,7 @@ const aiml=[
            Frontend Technologies
           </h2>
         <div className="mb-8 w-[120%] -ml-[10%] overflow-hidden">
+           {/* @ts-ignore - JSX component with declaration file */}
            <LogoLoop
             logos={techLogos}
             speed={100}
@@ -140,6 +147,7 @@ const aiml=[
           AI/ML Frameworks
           </h2>
        <div className="mb-8 w-[120%] -ml-[10%] overflow-hidden">
+           {/* @ts-ignore - JSX component with declaration file */}
            <LogoLoop
             logos={aiml}
             speed={100}
@@ -166,6 +174,7 @@ const aiml=[
            Database
           </h2>
        <div className="mb-8 w-[120%] -ml-[10%] overflow-hidden">
+           {/* @ts-ignore - JSX component with declaration file */}
            <LogoLoop
             logos={db}
             speed={100}
@@ -193,6 +202,7 @@ const aiml=[
            Other Tools
           </h2>
         <div className="mb-8 w-[120%] -ml-[10%] overflow-hidden">
+           {/* @ts-ignore - JSX component with declaration file */}
            <LogoLoop
             logos={tools}
             speed={100}

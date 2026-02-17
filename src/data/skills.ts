@@ -1,4 +1,6 @@
-export const skills = {
+import { SkillCategory, Experience, Education } from '../types';
+
+export const skills: SkillCategory = {
   frontend: [
     { name: "React", level: 85, icon: "⚛️" },
     { name: "JavaScript", level: 90, icon: "🟨" },
@@ -41,7 +43,7 @@ export const skills = {
   ]
 };
 
-export const experience = [
+export const experience: Experience[] = [
   {
     company: "DataSoft Systems Bangladesh Limited",
     position: "Intern",
@@ -58,7 +60,7 @@ export const experience = [
   }
 ];
 
-export const voluntaryExperience = [
+export const voluntaryExperience: Experience[] = [
   {
     company: "BUP Infotech Club",
     position: "Head of Competitive Programming",
@@ -68,7 +70,7 @@ export const voluntaryExperience = [
   }
 ];
 
-export const education = [
+export const education: Education[] = [
   {
     degree: "Bachelor of Science in Information & Communication Engineering",
     institution: "Bangladesh University of Professionals (BUP)",

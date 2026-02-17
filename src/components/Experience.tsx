@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { Briefcase } from 'lucide-react';
 import { experience } from '../data/skills';
+import { Experience as ExperienceType } from '../types';
 
-const Experience = () => {
+const Experience: React.FC = () => {
   return (
     <section id="experience" className="section-padding">
       <div className="container-custom">
@@ -39,7 +40,7 @@ const Experience = () => {
             </div>
 
             <div className="space-y-8">
-              {experience.map((job, index) => (
+              {experience.map((job: ExperienceType, index: number) => (
                 <motion.div
                   key={job.company}
                   initial={{ opacity: 0, y: 20 }}

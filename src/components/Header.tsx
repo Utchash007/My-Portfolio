@@ -1,10 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Download } from 'lucide-react';
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+interface NavItem {
+  name: string;
+  href: string;
+}
 
-  const navItems = [
+const Header: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+  const navItems: NavItem[] = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
@@ -15,7 +20,7 @@ const Header = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
-  const scrollToSection = (href) => {
+  const scrollToSection = (href: string): void => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -23,7 +28,7 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
-  const handleKeyDown = (event, href) => {
+  const handleKeyDown = (event: React.KeyboardEvent, href: string): void => {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
       scrollToSection(href);
@@ -32,8 +37,8 @@ const Header = () => {
 
   // Close mobile menu when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (isMenuOpen && !event.target.closest('header')) {
+    const handleClickOutside = (event: MouseEvent): void => {
+      if (isMenuOpen && !(event.target as HTMLElement).closest('header')) {
         setIsMenuOpen(false);
       }
     };

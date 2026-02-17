@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { GraduationCap, Users } from 'lucide-react';
 import { education, voluntaryExperience } from '../data/skills';
+import { Education as EducationType, Experience } from '../types';
 
-const Education = () => {
+const Education: React.FC = () => {
   return (
     <section id="education" className="section-padding">
       <div className="container-custom">
@@ -39,7 +40,7 @@ const Education = () => {
             </div>
 
             <div className="space-y-8">
-              {education.filter(edu => edu.degree !== "Higher Secondary Certificate (HSC)").map((edu, index) => (
+              {education.filter((edu: EducationType) => edu.degree !== "Higher Secondary Certificate (HSC)").map((edu: EducationType, index: number) => (
                 <motion.div
                   key={edu.degree}
                   initial={{ opacity: 0, y: 20 }}
@@ -49,7 +50,7 @@ const Education = () => {
                   className="relative"
                 >
                   {/* Timeline Line */}
-                  {index < education.filter(edu => edu.degree !== "Higher Secondary Certificate (HSC)").length - 1 && (
+                  {index < education.filter((edu: EducationType) => edu.degree !== "Higher Secondary Certificate (HSC)").length - 1 && (
                     <div className="absolute left-6 top-16 w-0.5 h-8 bg-gray-200 dark:bg-dark-700"></div>
                   )}
 
@@ -104,7 +105,7 @@ const Education = () => {
             </div>
 
             <div className="space-y-8">
-              {voluntaryExperience.map((job, index) => (
+              {voluntaryExperience.map((job: Experience, index: number) => (
                 <motion.div
                   key={job.company}
                   initial={{ opacity: 0, y: 20 }}

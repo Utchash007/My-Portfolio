@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { Award, Trophy, Code, Users } from 'lucide-react';
+import { Trophy, Code } from 'lucide-react';
 import { SiCodeforces, SiCodechef, SiLeetcode} from "react-icons/si";
-import { FaLaptopCode } from "react-icons/fa";
 import icpcLogo from '../assets/icpc_foundation-3.png';
-const Achievements = () => {
+
+const Achievements: React.FC = () => {
   return (
     <section id="achievements" className="section-padding bg-gray-50 dark:bg-dark-800">
       <div className="container-custom">

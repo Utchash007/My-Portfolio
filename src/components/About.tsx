@@ -1,16 +1,7 @@
 import { motion } from 'framer-motion';
-import { Download, MapPin, Calendar, Mail, Phone } from 'lucide-react';
 import DecryptedText from '../utils/DecryptedText/DecryptedText';
 
-const About = () => {
-  const personalInfo = [
-    { icon: <MapPin className="w-4 h-4" />, label: 'Location', value: 'Dhaka, Bangladesh' },
-    { icon: <Calendar className="w-4 h-4" />, label: 'Experience', value: '2+ Years' },
-    { icon: <Mail className="w-4 h-4" />, label: 'Email', value: 'shariarhasan872@gmail.com' },
-    { icon: <Phone className="w-4 h-4" />, label: 'Phone', value: '+880 1712-877099' },
-  ];
-
-  
+const About: React.FC = () => {
   return (
     <section id="about" className="section-padding bg-gray-50 dark:bg-slate-950">
       <div className="container-custom">
@@ -55,8 +46,8 @@ const About = () => {
                     src="/profile.jpg"
                     alt="Shariar Hasan"
                     className="w-full h-96 object-cover rounded-xl"
-                    onError={(e) => {
-                      e.target.src = 'https://via.placeholder.com/400x500/3B82F6/FFFFFF?text=Shariar+Hasan';
+                    onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                      e.currentTarget.src = 'https://via.placeholder.com/400x500/3B82F6/FFFFFF?text=Shariar+Hasan';
                     }}
                   />
                 </div>

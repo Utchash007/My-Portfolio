@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Eye } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import { projects } from '../data/projects';
+import { Project } from '../types';
 
-const Projects = () => {
-  const featuredProjects = projects.filter(project => project.featured);
+const Projects: React.FC = () => {
+  const featuredProjects: Project[] = projects.filter(project => project.featured);
 
   return (
     <section id="projects" className="section-padding bg-gray-50 dark:bg-dark-800">
@@ -40,8 +41,8 @@ const Projects = () => {
                   src={project.image}
                   alt={project.title}
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                  onError={(e) => {
-                    e.target.src = `https://via.placeholder.com/600x400/3B82F6/FFFFFF?text=${encodeURIComponent(project.title)}`;
+                  onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                    e.currentTarget.src = `https://via.placeholder.com/600x400/3B82F6/FFFFFF?text=${encodeURIComponent(project.title)}`;
                   }}
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
