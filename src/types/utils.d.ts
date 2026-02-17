@@ -1,6 +1,6 @@
 /// <reference types="react" />
 
-declare module '../utils/LightRays/LightRays' {
+declare module '*/utils/LightRays/LightRays' {
   export interface LightRaysProps {
     raysOrigin?: 'top-left' | 'top-center' | 'top-right' | 'left' | 'right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
     raysColor?: string;
@@ -21,7 +21,7 @@ declare module '../utils/LightRays/LightRays' {
   export default LightRays;
 }
 
-declare module '../utils/DecryptedText/DecryptedText' {
+declare module '*/utils/DecryptedText/DecryptedText' {
   export interface DecryptedTextProps {
     text: string;
     speed?: number;
@@ -41,7 +41,8 @@ declare module '../utils/DecryptedText/DecryptedText' {
   export default DecryptedText;
 }
 
-declare module '../utils/LogoLoop/LogoLoop' {
+
+declare module '*/utils/LogoLoop/LogoLoop' {
   export interface LogoItem {
     node?: React.ReactElement;
     src?: string;
