@@ -66,7 +66,7 @@ const Skills: React.FC = () => {
     { node: <SiMlflow />, title: "MLflow", href: "https://mlflow.org" },
   ];
   return (
-    <section id="skills" className="section-padding  bg-slate-950" >
+    <section id="skills" className="section-padding  bg-dark-900" >
 
       <div className="container-custom">
         <motion.div
@@ -106,7 +106,7 @@ const Skills: React.FC = () => {
               pauseOnHover={true}
               scaleOnHover={true}
               fadeOut={true}
-              fadeOutColor="#020617"
+              fadeOutColor="#0a0a0a"
               ariaLabel="Technology partners"
             />
           </div>
@@ -133,7 +133,7 @@ const Skills: React.FC = () => {
               pauseOnHover={true}
               scaleOnHover={true}
               fadeOut={true}
-              fadeOutColor="#020617"
+              fadeOutColor="#0a0a0a"
               ariaLabel="Technology partners"
             />
           </div>
@@ -154,7 +154,7 @@ const Skills: React.FC = () => {
               pauseOnHover={true}
               scaleOnHover={true}
               fadeOut={true}
-              fadeOutColor="#020617"
+              fadeOutColor="#0a0a0a"
               ariaLabel="Technology partners"
             />
           </div>
@@ -181,7 +181,7 @@ const Skills: React.FC = () => {
               pauseOnHover={true}
               scaleOnHover={true}
               fadeOut={true}
-              fadeOutColor="#020617"
+              fadeOutColor="#0a0a0a"
               ariaLabel="Technology partners"
             />
           </div>
@@ -209,7 +209,7 @@ const Skills: React.FC = () => {
               pauseOnHover={true}
               scaleOnHover={true}
               fadeOut={true}
-              fadeOutColor="#020617"
+              fadeOutColor="#0a0a0a"
               ariaLabel="Technology partners"
             />
           </div>

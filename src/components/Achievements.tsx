@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import { Trophy, Code } from 'lucide-react';
-import { SiCodeforces, SiCodechef, SiLeetcode} from "react-icons/si";
+import { SiCodeforces, SiCodechef, SiLeetcode } from "react-icons/si";
 import icpcLogo from '../assets/icpc_foundation-3.png';
 
 const Achievements: React.FC = () => {
   return (
-    <section id="achievements" className="section-padding bg-gray-50 dark:bg-dark-800">
+    <section id="achievements" className="section-padding bg-dark-900">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -14,10 +14,11 @@ const Achievements: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <span className="section-badge">Recognition</span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Achievements & Recognition
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             Notable accomplishments in competitive programming, contests, and professional recognition
           </p>
         </motion.div>
@@ -31,8 +32,8 @@ const Achievements: React.FC = () => {
             className="card p-8 mb-8"
           >
             <div className="flex items-center justify-center mb-8">
-              <div className="p-3 bg-amber-100 dark:bg-amber-900/20 rounded-lg mr-4">
-                <Trophy className="w-6 h-6 text-amber-600 dark:text-amber-400" />
+              <div className="p-3 bg-primary-100 dark:bg-primary-900/20 rounded-lg mr-4">
+                <Trophy className="w-6 h-6 text-primary-600 dark:text-primary-400" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                 Programming Contests
@@ -57,8 +58,8 @@ const Achievements: React.FC = () => {
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-1">ICPC</h4>
                     <p className="text-sm text-gray-600 dark:text-gray-400">Honorable Mention 2023 & 2024</p>
                   </div>
-                  <a 
-                    href="https://icpc.global/ICPCID/VRAXMHLVC062" 
+                  <a
+                    href="https://icpc.global/ICPCID/VRAXMHLVC062"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-slate-100 dark:text-slate-100 hover:text-slate-400 dark:hover:text-slate-400 text-sm font-medium transition-colors"
@@ -68,7 +69,7 @@ const Achievements: React.FC = () => {
                 </div>
               </motion.div>
 
-             
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -114,7 +115,7 @@ const Achievements: React.FC = () => {
             </div>
           </motion.div>
 
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -123,8 +124,8 @@ const Achievements: React.FC = () => {
             className="card p-8 mb-12"
           >
             <div className="flex items-center justify-center mb-8">
-              <div className="p-3 bg-blue-100 dark:bg-blue-900/20 rounded-lg mr-4">
-                <Code className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+              <div className="p-3 bg-primary-100 dark:bg-primary-900/20 rounded-lg mr-4">
+                <Code className="w-6 h-6 text-primary-600 dark:text-primary-400" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                 Online Platforms
@@ -132,7 +133,7 @@ const Achievements: React.FC = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -148,8 +149,8 @@ const Achievements: React.FC = () => {
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Codeforces Pupil</h4>
                     <p className="text-sm text-gray-600 dark:text-gray-400">Max Rating: 1201</p>
                   </div>
-                  <a 
-                    href="https://codeforces.com/profile/Shariar67" 
+                  <a
+                    href="https://codeforces.com/profile/Shariar67"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-lime-600 dark:text-lime-400 hover:text-lime-800 dark:hover:text-lime-300 text-sm font-medium transition-colors"
@@ -159,7 +160,7 @@ const Achievements: React.FC = () => {
                 </div>
               </motion.div>
 
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -175,8 +176,8 @@ const Achievements: React.FC = () => {
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-1">CodeChef 2 Star</h4>
                     <p className="text-sm text-gray-600 dark:text-gray-400">Max Rating: 1453</p>
                   </div>
-                  <a 
-                    href="https://www.codechef.com/users/utchash_007" 
+                  <a
+                    href="https://www.codechef.com/users/utchash_007"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-orange-600 dark:text-orange-400 hover:text-orange-800 dark:hover:text-orange-300 text-sm font-medium transition-colors"
@@ -201,8 +202,8 @@ const Achievements: React.FC = () => {
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-1">LeetCode</h4>
                     <p className="text-sm text-gray-600 dark:text-gray-400">Total solved: 100+</p>
                   </div>
-                  <a 
-                    href="https://leetcode.com/u/shariarhasan872/" 
+                  <a
+                    href="https://leetcode.com/u/shariarhasan872/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-yellow-600 dark:text-yellow-400 hover:text-yellow-800 dark:hover:text-yellow-300 text-sm font-medium transition-colors"
@@ -213,16 +214,16 @@ const Achievements: React.FC = () => {
               </motion.div>
             </div>
 
-           
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.8 }}
               viewport={{ once: true }}
-              className="text-center bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4"
+              className="text-center bg-primary-50 dark:bg-primary-900/20 rounded-lg p-4"
             >
               <div className="flex items-center justify-center">
-                <span className="text-blue-600 dark:text-blue-400 mr-3 text-xl">🎯</span>
+                <span className="text-primary-600 dark:text-primary-400 mr-3 text-xl">🎯</span>
                 <span className="text-lg font-medium text-gray-900 dark:text-white">
                   Solved 1000+ problems across platforms
                 </span>
