@@ -35,4 +35,5 @@ export interface Education {
   institution: string;
   duration: string;
   description: string;
+  grade?: string;
 }

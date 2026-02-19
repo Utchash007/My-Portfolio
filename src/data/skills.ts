@@ -75,7 +75,8 @@ export const education: Education[] = [
     degree: "Bachelor of Science in Information & Communication Engineering",
     institution: "Bangladesh University of Professionals (BUP)",
     duration: "2021 - 2025",
-    description: "Recently graduated with a B.Sc. degree in Information and Communication Engineering with CGPA: 3.59. Focus on Software Engineering, Machine Learning, and Communication Systems. Active in competitive programming and technical leadership roles."
+    description: "Recently graduated with a B.Sc. degree in Information and Communication Engineering. Focus on Software Engineering, Machine Learning, and Communication Systems. Active in competitive programming and technical leadership roles.",
+    grade: "3.59"
   },
   {
     degree: "Higher Secondary Certificate (HSC)",
