@@ -101,7 +101,7 @@ const About: React.FC = () => {
             </div>
 
             {/* Stats Row */}
-            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
+            <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/10">
               <div className="text-center">
                 <h4 className="text-2xl sm:text-3xl font-bold text-white mb-1">1000+</h4>
                 <p className="text-xs text-gray-500 uppercase tracking-wider">Problems Solved</p>
@@ -109,10 +109,6 @@ const About: React.FC = () => {
               <div className="text-center">
                 <h4 className="text-2xl sm:text-3xl font-bold text-white mb-1">2x</h4>
                 <p className="text-xs text-gray-500 uppercase tracking-wider">ICPC Regional</p>
-              </div>
-              <div className="text-center">
-                <h4 className="text-2xl sm:text-3xl font-bold text-white mb-1">3.59</h4>
-                <p className="text-xs text-gray-500 uppercase tracking-wider">CGPA</p>
               </div>
             </div>
           </motion.div>

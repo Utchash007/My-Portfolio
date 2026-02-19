@@ -29,10 +29,10 @@ const Achievements: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="card p-8 mb-8"
+            className="bg-black rounded-xl border border-white/10 hover:border-primary-500 transition-all duration-300 p-8 mb-8"
           >
             <div className="flex items-center justify-center mb-8">
-              <div className="p-3 bg-primary-100 dark:bg-primary-900/20 rounded-lg mr-4">
+              <div className="p-3 bg-white/5 rounded-lg mr-4">
                 <Trophy className="w-6 h-6 text-primary-600 dark:text-primary-400" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
@@ -46,7 +46,7 @@ const Achievements: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-dark-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-dark-600"
+                className="bg-black rounded-xl p-6 shadow-lg hover:bg-white/5 hover:border-primary-500 transition-all duration-300 border border-white/10"
               >
                 <div className="flex justify-center mb-4">
                   <div className="w-16 h-16 flex items-center justify-center">
@@ -75,7 +75,7 @@ const Achievements: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-dark-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-dark-600"
+                className="bg-black rounded-xl p-6 shadow-lg hover:bg-white/5 hover:border-primary-500 transition-all duration-300 border border-white/10"
               >
                 <div className="flex justify-center mb-4">
                   <Trophy className="text-green-600 dark:text-green-400 w-12 h-12" />
@@ -97,7 +97,7 @@ const Achievements: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-dark-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-dark-600"
+                className="bg-black rounded-xl p-6 shadow-lg hover:bg-white/5 hover:border-primary-500 transition-all duration-300 border border-white/10"
               >
                 <div className="flex justify-center mb-4">
                   <Code className="text-blue-600 dark:text-blue-400 w-12 h-12" />
@@ -121,10 +121,10 @@ const Achievements: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
-            className="card p-8 mb-12"
+            className="bg-black rounded-xl border border-white/10 hover:border-primary-500 transition-all duration-300 p-8 mb-12"
           >
             <div className="flex items-center justify-center mb-8">
-              <div className="p-3 bg-primary-100 dark:bg-primary-900/20 rounded-lg mr-4">
+              <div className="p-3 bg-white/5 rounded-lg mr-4">
                 <Code className="w-6 h-6 text-primary-600 dark:text-primary-400" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
@@ -139,7 +139,7 @@ const Achievements: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-dark-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-dark-600"
+                className="bg-black rounded-xl p-6 shadow-lg hover:bg-white/5 hover:border-primary-500 transition-all duration-300 border border-white/10"
               >
                 <div className="flex justify-center mb-4">
                   <SiCodeforces className="text-lime-600 dark:text-lime-400 w-12 h-12" />
@@ -166,7 +166,7 @@ const Achievements: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-dark-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-dark-600"
+                className="bg-black rounded-xl p-6 shadow-lg hover:bg-white/5 hover:border-primary-500 transition-all duration-300 border border-white/10"
               >
                 <div className="flex justify-center mb-4">
                   <SiCodechef className="text-orange-600 dark:text-orange-400 w-12 h-12" />
@@ -192,7 +192,7 @@ const Achievements: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-dark-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-dark-600"
+                className="bg-black rounded-xl p-6 shadow-lg hover:bg-white/5 hover:border-primary-500 transition-all duration-300 border border-white/10"
               >
                 <div className="flex justify-center mb-4">
                   <SiLeetcode className="text-yellow-600 dark:text-yellow-400 w-12 h-12" />
@@ -220,7 +220,7 @@ const Achievements: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.8 }}
               viewport={{ once: true }}
-              className="text-center bg-primary-50 dark:bg-primary-900/20 rounded-lg p-4"
+              className="text-center bg-black rounded-lg p-4 border border-white/10"
             >
               <div className="flex items-center justify-center">
                 <span className="text-primary-600 dark:text-primary-400 mr-3 text-xl">🎯</span>
