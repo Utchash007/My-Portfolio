@@ -183,6 +183,7 @@ const Contact: React.FC = () => {
                     id="name"
                     name="name"
                     required
+                    autoComplete="name"
                     className="form-input"
                     placeholder="Your name"
                   />
@@ -199,6 +200,8 @@ const Contact: React.FC = () => {
                     id="email"
                     name="email"
                     required
+                    autoComplete="email"
+                    spellCheck={false}
                     className="form-input"
                     placeholder="your.email@example.com"
                   />

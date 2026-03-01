@@ -57,7 +57,7 @@ const Header: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-dark-900/80 backdrop-blur-xl border-b border-white/5' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ${isScrolled ? 'bg-dark-900/80 backdrop-blur-xl border-b border-white/5' : 'bg-transparent'}`}>
       <div className="container-custom px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -68,15 +68,14 @@ const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6 xl:space-x-8">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                onKeyDown={(e) => handleKeyDown(e, item.href)}
-                className="text-gray-400 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap focus:outline-none text-sm"
-                tabIndex={0}
+                href={item.href}
+                onClick={(e) => { e.preventDefault(); scrollToSection(item.href); }}
+                className="text-gray-400 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-900 rounded text-sm"
               >
                 {item.name}
-              </button>
+              </a>
             ))}
           </nav>
 
@@ -109,15 +108,14 @@ const Header: React.FC = () => {
           <div className="md:hidden py-4 border-t border-white/5 bg-dark-900/95 backdrop-blur-xl rounded-b-lg">
             <nav className="flex flex-col space-y-1">
               {navItems.map((item) => (
-                <button
+                <a
                   key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  onKeyDown={(e) => handleKeyDown(e, item.href)}
-                  className="text-left py-3 px-4 text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200 font-medium rounded-lg mx-2 focus:outline-none w-full text-sm"
-                  tabIndex={0}
+                  href={item.href}
+                  onClick={(e) => { e.preventDefault(); scrollToSection(item.href); }}
+                  className="text-left py-3 px-4 text-gray-400 hover:text-white hover:bg-white/5 transition-colors duration-200 font-medium rounded-lg mx-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-900 block text-sm"
                 >
                   {item.name}
-                </button>
+                </a>
               ))}
               <div className="mx-2 mt-2">
                 <a

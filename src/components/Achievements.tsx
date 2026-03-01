@@ -50,7 +50,7 @@ const Achievements: React.FC = () => {
               >
                 <div className="flex justify-center mb-4">
                   <div className="w-16 h-16 flex items-center justify-center">
-                    <img src={icpcLogo} alt="ICPC Logo" className="w-full h-full object-contain" />
+                    <img src={icpcLogo} alt="ICPC Logo" width={64} height={64} loading="lazy" className="w-full h-full object-contain" />
                   </div>
                 </div>
                 <div className="flex justify-between items-end">

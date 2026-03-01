@@ -192,10 +192,14 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.form-input:focus {
+.form-input:focus-visible {
   outline: none;
   border-color: rgba(20, 184, 166, 0.5);
   box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15);
+}
+
+.form-input:focus:not(:focus-visible) {
+  outline: none;
 }
 
 /* Contact info card */
@@ -219,4 +223,21 @@
   @apply flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center relative z-10;
   background: #14b8a6;
   box-shadow: 0 0 10px rgba(20, 184, 166, 0.4);
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .gradient-orb {
+    animation: none !important;
+  }
+
+  .grid-pattern {
+    display: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

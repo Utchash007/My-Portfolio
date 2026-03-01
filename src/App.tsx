@@ -21,8 +21,8 @@ function App() {
 
   return (
     <div className="App">
-      <SpeedInsights/>
-      <Analytics/>
+      <SpeedInsights />
+      <Analytics />
       <Header />
       <main>
         <Hero />

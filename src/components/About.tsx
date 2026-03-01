@@ -53,7 +53,10 @@ const About: React.FC = () => {
                 <img
                   src="/profile.jpg"
                   alt="Shariar Hasan"
+                  width={400}
+                  height={420}
                   className="w-full h-[420px] object-cover object-top rounded-xl"
+                  fetchPriority="high"
                   onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                     e.currentTarget.src = 'https://via.placeholder.com/400x500/0a0a0a/14b8a6?text=Shariar+Hasan';
                   }}
