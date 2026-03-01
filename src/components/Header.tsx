@@ -29,13 +29,6 @@ const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
 
-  const handleKeyDown = (event: React.KeyboardEvent, href: string): void => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      scrollToSection(href);
-    }
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
