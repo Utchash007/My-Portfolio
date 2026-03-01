@@ -78,6 +78,7 @@ const Skills: React.FC = () => {
           className="text-center mb-16"
         >
 
+          <span className="section-badge">Technical Skills</span>
           <h2 className="text-4xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-4">
             Skills & Technologies
           </h2>
