@@ -134,7 +134,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="mb-8"
           >
-            <span className="section-badge">
+            <span className="section-badge mt-10">
               <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2 animate-pulse" />
               Available for opportunities
             </span>
