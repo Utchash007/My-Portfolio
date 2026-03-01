@@ -41,6 +41,9 @@ const Projects: React.FC = () => {
                 <img
                   src={project.image}
                   alt={project.title}
+                  width={600}
+                  height={400}
+                  loading="lazy"
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                   onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                     e.currentTarget.src = `https://via.placeholder.com/600x400/0a0a0a/14b8a6?text=${encodeURIComponent(project.title)}`;

@@ -23,6 +23,10 @@ const Hero: React.FC = () => {
 
   // Particle animation
   useEffect(() => {
+    // Skip particle animation if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -111,15 +115,15 @@ const Hero: React.FC = () => {
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-dark-900">
 
       {/* Canvas Particle Animation */}
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" aria-hidden="true" />
 
       {/* Gradient Orbs */}
-      <div className="gradient-orb gradient-orb-1" />
-      <div className="gradient-orb gradient-orb-2" />
-      <div className="gradient-orb gradient-orb-3" />
+      <div className="gradient-orb gradient-orb-1" aria-hidden="true" />
+      <div className="gradient-orb gradient-orb-2" aria-hidden="true" />
+      <div className="gradient-orb gradient-orb-3" aria-hidden="true" />
 
       {/* Grid Pattern Overlay */}
-      <div className="grid-pattern" />
+      <div className="grid-pattern" aria-hidden="true" />
 
       {/* Base gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-900/20 via-transparent to-cyan-900/10 pointer-events-none" />
