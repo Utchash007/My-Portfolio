@@ -1,0 +1,20 @@
+name: Create Deprecated Branch
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-deprecated-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Create or update Deprecated branch from main
+        run: |
+          git checkout -b Deprecated || git checkout Deprecated
+          git reset --hard origin/main
+          git push origin Deprecated --force
