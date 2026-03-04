@@ -57,6 +57,13 @@ export const experience: Experience[] = [
     duration: "Jan 2025 - Apr 2025",
     description: "Contributed to the development of full-stack web applications using React, Django, and Django REST Framework (DRF) in a collaborative team environment. Implemented GitHub Actions for CI/CD to automate testing and deployment workflows. Enhanced skills in backend API development, frontend integration, and team-based version control with Git.",
     technologies: ["React", "Django", "Django REST Framework", "GitHub Actions", "CI/CD", "Git"]
+  },
+  {
+    company: "Softifybd Limited",
+    position: "Software Engineer",
+    duration: "Nov 2025 - Present",
+    description: "Contributing to the development of ISPDigital, an ISP management and billing ERP system using C#, ASP.NET Core, MVC, and WebAPI. Diagnosing and resolving production issues reported by support teams, improving system stability and reliability across live deployments. Refactored controller-level business logic into a dedicated service layer, reducing duplication and improving maintainability.",
+    technologies: ["C#", "ASP.NET Core", "MVC", "WebAPI", "ERP"]
   }
 ];
 
