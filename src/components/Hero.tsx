@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ArrowRight } from 'lucide-react';
+import Terminal from './Terminal';
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [displayedName, setDisplayedName] = useState('');
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false);
   const fullName = 'Shariar Hasan';
 
   // Typewriter effect
@@ -203,7 +205,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex justify-center space-x-5 mb-16"
+            className="flex justify-center space-x-5 mb-10"
           >
             <a
               href="https://github.com/Utchash007"
@@ -232,6 +234,23 @@ const Hero: React.FC = () => {
             </a>
           </motion.div>
 
+          {/* Open Terminal Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="mb-14"
+          >
+            <button
+              className="open-terminal-btn"
+              onClick={() => setIsTerminalOpen(true)}
+              id="open-terminal-btn"
+            >
+              <span className="terminal-icon">&gt;_</span>
+              <span>Open Terminal</span>
+            </button>
+          </motion.div>
+
           {/* Scroll Indicator */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -247,6 +266,9 @@ const Hero: React.FC = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Terminal Modal */}
+      <Terminal isOpen={isTerminalOpen} onClose={() => setIsTerminalOpen(false)} />
     </section>
   );
 };
