@@ -30,3 +30,5 @@ skills-lock.json
 .kiro
 .vscode
 .claude
+.env
+.env.*

@@ -225,6 +225,304 @@
   box-shadow: 0 0 10px rgba(20, 184, 166, 0.4);
 }
 
+/* ====== Terminal Component Styles ====== */
+
+/* Backdrop overlay */
+.terminal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Terminal window */
+.terminal-window {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  height: 55vh;
+  max-height: 600px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(17, 17, 17, 0.92);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: none;
+  box-shadow:
+    0 -8px 40px rgba(0, 0, 0, 0.5),
+    0 0 80px rgba(20, 184, 166, 0.06);
+  font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace;
+  overflow: hidden;
+}
+
+/* Title bar */
+.terminal-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(30, 30, 30, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* Traffic light dots */
+.terminal-traffic-lights {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.terminal-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: none;
+  cursor: default;
+  transition: opacity 0.15s ease;
+}
+
+.terminal-dot:hover {
+  opacity: 0.8;
+}
+
+.terminal-dot-red {
+  background: #ff5f57;
+  cursor: pointer;
+}
+
+.terminal-dot-yellow {
+  background: #febc2e;
+}
+
+.terminal-dot-green {
+  background: #28c840;
+}
+
+/* Title text */
+.terminal-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.02em;
+}
+
+.terminal-title-icon {
+  color: #14b8a6;
+  font-weight: 600;
+}
+
+/* Close button */
+.terminal-close-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  line-height: 1;
+}
+
+.terminal-close-btn:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Drag handle */
+.terminal-drag-handle {
+  text-align: center;
+  padding: 4px 0;
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 18px;
+  letter-spacing: 4px;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+/* Content area */
+.terminal-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 12px 20px 20px;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+.terminal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.terminal-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.terminal-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.terminal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Line styles */
+.terminal-line {
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.terminal-line-system {
+  color: rgba(255, 255, 255, 0.5);
+  min-height: 1.2em;
+}
+
+.terminal-line-ok {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.terminal-line-ok::before {
+  content: '';
+}
+
+.terminal-line-command {
+  color: #2dd4bf;
+  font-weight: 500;
+}
+
+.terminal-line-output {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.terminal-line-error {
+  color: #f87171;
+}
+
+.terminal-line-header {
+  color: #a78bfa;
+  font-weight: 600;
+}
+
+.terminal-line-instruction {
+  color: #a78bfa;
+  font-style: italic;
+}
+
+/* Divider line */
+.terminal-divider {
+  height: 1px;
+  margin: 6px 0;
+  background: linear-gradient(to right, #a78bfa, #f59e0b, transparent 60%);
+  opacity: 0.5;
+}
+
+/* Input line */
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.terminal-prompt {
+  color: #2dd4bf;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.terminal-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: #2dd4bf;
+  font-family: inherit;
+  font-size: 13px;
+  caret-color: #2dd4bf;
+  padding: 0;
+}
+
+.terminal-input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+  font-style: italic;
+}
+
+/* Blinking cursor via caret-shape (modern browsers) + fallback */
+.terminal-input:focus {
+  outline: none;
+}
+
+/* Open Terminal button in Hero */
+.open-terminal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+  color: #2dd4bf;
+  background: transparent;
+  border: 1px solid rgba(20, 184, 166, 0.35);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.02em;
+}
+
+.open-terminal-btn:hover {
+  background: rgba(20, 184, 166, 0.08);
+  border-color: rgba(20, 184, 166, 0.6);
+  box-shadow: 0 0 20px rgba(20, 184, 166, 0.12);
+}
+
+.open-terminal-btn .terminal-icon {
+  font-weight: 700;
+}
+
+/* ====== Responsive Terminal ====== */
+@media (max-width: 640px) {
+  .terminal-window {
+    height: 65vh;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .terminal-content {
+    padding: 10px 14px 16px;
+  }
+
+  .terminal-line {
+    font-size: 11.5px;
+  }
+
+  .terminal-input {
+    font-size: 12px;
+  }
+
+  .terminal-titlebar {
+    padding: 10px 12px;
+  }
+
+  .terminal-title {
+    font-size: 11px;
+  }
+}
+
 /* Respect reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .gradient-orb {
