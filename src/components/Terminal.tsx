@@ -27,9 +27,10 @@ const BOOT_LINES: TerminalLine[] = [
   { text: '[ OK ] Verifying competitive programming badges...', type: 'ok' },
   { text: '[ OK ] Loading ICPC achievements...', type: 'ok' },
   { text: '[ OK ] Hydrating contact form endpoints...', type: 'ok' },
+  { text: '[ OK ] Connecting to AI assistant...', type: 'ok' },
   { text: '[ OK ] All systems operational.', type: 'ok' },
   { text: '', type: 'system' },
-  { text: "Type 'help' to see available commands.", type: 'instruction' },
+  { text: "Type '/help' to see available commands.", type: 'instruction' },
 ];
 
 const BOOT_DELAY = 80;
@@ -41,14 +42,15 @@ function getHelpOutput(): TerminalLine[] {
     { text: '', type: 'system' },
     { text: '  Available Commands:', type: 'header' },
     { text: '', type: 'divider' },
-    { text: '  help       — Show this help message', type: 'output' },
-    { text: '  about      — Learn about me', type: 'output' },
-    { text: '  skills     — View my technical skills', type: 'output' },
-    { text: '  projects   — Browse my projects', type: 'output' },
-    { text: '  experience — View my work experience', type: 'output' },
-    { text: '  education  — View my education', type: 'output' },
-    { text: '  contact    — Get my contact info', type: 'output' },
-    { text: '  clear      — Clear the terminal', type: 'output' },
+    { text: '  /help       — Show this help message', type: 'output' },
+    { text: '  /about      — Learn about me', type: 'output' },
+    { text: '  /skills     — View my technical skills', type: 'output' },
+    { text: '  /projects   — Browse my projects', type: 'output' },
+    { text: '  /experience — View my work experience', type: 'output' },
+    { text: '  /education  — View my education', type: 'output' },
+    { text: '  /contact    — Get my contact info', type: 'output' },
+    { text: '  /clear      — Clear the terminal', type: 'output' },
+    { text: '  /ask <q>    — Ask AI about Shariar (RAG)', type: 'output' },
     { text: '', type: 'system' },
   ];
 }
@@ -77,7 +79,7 @@ function getSkillsOutput(): TerminalLine[] {
   const lines: TerminalLine[] = [
     { text: '', type: 'system' },
     { text: '  ╔══════════════════════════════════════╗', type: 'header' },
-    { text: '  ║           Technical Skills            ║', type: 'header' },
+    { text: '  ║           Technical Skills           ║', type: 'header' },
     { text: '  ╚══════════════════════════════════════╝', type: 'header' },
     { text: '', type: 'system' },
   ];
@@ -124,7 +126,7 @@ function getExperienceOutput(): TerminalLine[] {
   const lines: TerminalLine[] = [
     { text: '', type: 'system' },
     { text: '  ╔══════════════════════════════════════╗', type: 'header' },
-    { text: '  ║           Work Experience             ║', type: 'header' },
+    { text: '  ║           Work Experience            ║', type: 'header' },
     { text: '  ╚══════════════════════════════════════╝', type: 'header' },
     { text: '', type: 'system' },
   ];
@@ -188,6 +190,7 @@ const Terminal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
   const [isBooting, setIsBooting] = useState(true);
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
+  const [isLoading, setIsLoading] = useState(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -253,12 +256,71 @@ const Terminal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
 
   // Process commands
   const processCommand = useCallback((cmd: string) => {
-    const trimmed = cmd.trim().toLowerCase();
+    const raw = cmd.trim().toLowerCase();
+    // Strip leading '/' if present
+    const trimmed = raw.startsWith('/') ? raw.slice(1) : raw;
 
     const commandLine: TerminalLine = { text: `$ ${cmd}`, type: 'command' };
 
     if (trimmed === 'clear') {
       setLines([]);
+      return;
+    }
+
+    // Handle /ask command (async)
+    if (trimmed.startsWith('ask')) {
+      const question = cmd.trim().replace(/^\/?ask\s*/i, '');
+
+      if (!question) {
+        setLines(prev => [...prev, commandLine,
+          { text: '', type: 'system' },
+          { text: '  Usage: /ask <your question>', type: 'error' },
+          { text: "  Example: /ask What is Shariar's Python experience?", type: 'instruction' },
+          { text: '', type: 'system' },
+        ]);
+        return;
+      }
+
+      // Show command + loading
+      const loadingLine: TerminalLine = { text: '  ⏳ Thinking...', type: 'instruction' };
+      setLines(prev => [...prev, commandLine,
+        { text: '', type: 'system' },
+        loadingLine,
+      ]);
+      setIsLoading(true);
+
+      const apiUrl = import.meta.env.VITE_RAG_API_URL;
+
+      fetch(`${apiUrl}/query`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question }),
+      })
+        .then(res => {
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          return res.json();
+        })
+        .then(data => {
+          setLines(prev => {
+            const updated = prev.filter(l => l !== loadingLine);
+            return [...updated,
+              { text: `  /answer ${data.answer}`, type: 'output' },
+              { text: '', type: 'system' },
+            ];
+          });
+        })
+        .catch(err => {
+          setLines(prev => {
+            const updated = prev.filter(l => l !== loadingLine);
+            return [...updated,
+              { text: `  ❌ Error: ${err.message}`, type: 'error' },
+              { text: '  The AI service may be warming up. Try again in a moment.', type: 'instruction' },
+              { text: '', type: 'system' },
+            ];
+          });
+        })
+        .finally(() => setIsLoading(false));
+
       return;
     }
 
@@ -289,8 +351,8 @@ const Terminal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
       default:
         output = [
           { text: '', type: 'system' },
-          { text: `  Command not found: ${trimmed}`, type: 'error' },
-          { text: "  Type 'help' to see available commands.", type: 'instruction' },
+          { text: `  Command not found: ${raw}`, type: 'error' },
+          { text: "  Type '/help' to see available commands.", type: 'instruction' },
           { text: '', type: 'system' },
         ];
     }
@@ -431,7 +493,8 @@ const Terminal: React.FC<TerminalProps> = ({ isOpen, onClose }) => {
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     onKeyDown={handleKeyDown}
-                    placeholder="Type a command..."
+                    placeholder="/help, /about, /ask ..."
+                    disabled={isLoading}
                     autoComplete="off"
                     spellCheck={false}
                   />
